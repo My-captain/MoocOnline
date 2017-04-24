@@ -1,0 +1,31 @@
+{% extends 'org_base.html' %}
+{% block title %}机构课程-{{ course_org.name }}{% endblock %}
+{% block page_path %}机构课程{% endblock %}
+{% block right_form %}
+    <div class="right companycenter layout grouping" >
+        <div class="head">
+            <h1>全部课程</h1>
+            <a class="green fr more" href="org-detail-course.html">查看更多  >  </a>
+        </div>
+        <div class="brief group_list">
+            {% for course in all_courses %}
+                <div class="module1_5 box">
+                    {#course是后台返回的course对象#}
+                    <a href="course-detail.html"><img width="214" src="{{ MEDIA_URL }}{{ course.image }}"/></a>
+                    <div class="des">
+                        <a href="course-detail.html"><h2>{{ course.name }}</h2></a>
+                        <span class="fl">课时：<i class="key">0</i></span>
+                        <span class="fr">参加人数：3</span>
+                    </div>
+                    <div class="bottom">
+                        <span class="fl">慕课网</span>
+                         <span class="star fr  notlogin
+                            " data-favid="13"  data-fav-type="4">
+                            0
+                        </span>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
